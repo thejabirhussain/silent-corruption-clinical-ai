@@ -1,0 +1,8 @@
+condition,family,level,seed,dpi,cer,n_correct,n_corrupted,n_missing,n_silent_corruption,n_impossible,n_decimal_shift,value_accuracy
+baseline_300dpi,baseline,0,0,300,,13,0,0,0,0,0,1.0
+dpi_200,resolution,200,0,200,,12,1,0,0,1,1,0.9230769230769231
+dpi_150,resolution,150,0,150,,12,1,0,1,0,0,0.9230769230769231
+dpi_120,resolution,120,0,120,,12,1,0,0,1,0,0.9230769230769231
+dpi_100,resolution,100,0,100,,8,4,1,2,3,4,0.6153846153846154
+dpi_85,resolution,85,0,85,,3,8,2,2,2,4,0.23076923076923078
+dpi_72,resolution,72,0,72,,0,9,4,3,4,3,0.0

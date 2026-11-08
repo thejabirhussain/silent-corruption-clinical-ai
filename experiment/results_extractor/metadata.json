@@ -1,0 +1,22 @@
+{
+  "provider": "OllamaLLMProvider",
+  "model": "llama3.2:latest",
+  "conditions": [
+    "baseline_300dpi",
+    "dpi_200",
+    "dpi_150",
+    "dpi_120",
+    "dpi_100",
+    "dpi_85",
+    "dpi_72",
+    "jpeg_q15",
+    "rotate_5.0",
+    "blur_3.0",
+    "noise_30",
+    "photo_phone"
+  ],
+  "repeats": 2,
+  "temperature": 0.0,
+  "prompt_source": "app.ingestion.clinical_parser.parse_document",
+  "ocr_source": "results/ocr"
+}

@@ -1,0 +1,76 @@
+{
+  "seed": 20261016,
+  "n": 10,
+  "documents": [
+    {
+      "doc": 0,
+      "pdf": "documents/doc00.pdf",
+      "pages": 1,
+      "body_pt": 9.5,
+      "patient": "Maria Alvarez"
+    },
+    {
+      "doc": 1,
+      "pdf": "documents/doc01.pdf",
+      "pages": 1,
+      "body_pt": 9.0,
+      "patient": "John Okafor"
+    },
+    {
+      "doc": 2,
+      "pdf": "documents/doc02.pdf",
+      "pages": 1,
+      "body_pt": 10.0,
+      "patient": "Aisha Rahman"
+    },
+    {
+      "doc": 3,
+      "pdf": "documents/doc03.pdf",
+      "pages": 1,
+      "body_pt": 9.5,
+      "patient": "Tomas Novak"
+    },
+    {
+      "doc": 4,
+      "pdf": "documents/doc04.pdf",
+      "pages": 1,
+      "body_pt": 8.5,
+      "patient": "Grace Mbeki"
+    },
+    {
+      "doc": 5,
+      "pdf": "documents/doc05.pdf",
+      "pages": 1,
+      "body_pt": 9.5,
+      "patient": "Peter Lindqvist"
+    },
+    {
+      "doc": 6,
+      "pdf": "documents/doc06.pdf",
+      "pages": 1,
+      "body_pt": 9.0,
+      "patient": "Sana Qureshi"
+    },
+    {
+      "doc": 7,
+      "pdf": "documents/doc07.pdf",
+      "pages": 1,
+      "body_pt": 10.0,
+      "patient": "Daniel Kim"
+    },
+    {
+      "doc": 8,
+      "pdf": "documents/doc08.pdf",
+      "pages": 1,
+      "body_pt": 9.5,
+      "patient": "Elena Rossi"
+    },
+    {
+      "doc": 9,
+      "pdf": "documents/doc09.pdf",
+      "pages": 1,
+      "body_pt": 8.5,
+      "patient": "Omar Haddad"
+    }
+  ]
+}

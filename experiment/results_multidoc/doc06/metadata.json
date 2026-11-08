@@ -1,0 +1,10 @@
+{
+  "pdf": "documents/doc06.pdf",
+  "pages": [
+    0
+  ],
+  "psm": 6,
+  "n_conditions": 7,
+  "n_analytes": 13,
+  "tesseract": "tesseract 5.5.1"
+}

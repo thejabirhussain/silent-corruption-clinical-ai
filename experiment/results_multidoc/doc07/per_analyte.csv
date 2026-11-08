@@ -1,0 +1,92 @@
+condition,family,level,seed,dpi,blur,jpeg,rotate,noise,analyte,truth,extracted,status,truth_flag,extracted_flag,decimal_shift,ocr_line
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Glucose (fasting),83.0,83.0,correct,,,,Glucose (fasting)                                     83         mg/dL                                       70 - 99
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,HbA1c,11.6,11.6,correct,H,H,,HbA1c                                                  11.6       %                                             4.0-5.6 
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Hemoglobin,6.9,6.9,correct,L,L,,Hemoglobin                                         6.9        g/dL                                        12.0-15.5 L
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Ferritin,290.0,290.0,correct,H,H,,Ferritin                                                   290        ng/mL                                          15 
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,WBC,13.0,13.0,correct,H,H,,WBC                                                13.0      1049/L                                     45-11.00 H
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Platelets,223.0,223.0,correct,,,,Platelets                                                 223        1049/L                                         150 
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Sodium,148.0,148.0,correct,H,H,,Sodium                                              148       mEq/L                                     135-145 4H
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Potassium,6.4,6.4,correct,H,H,,Potassium                                             6.4        mEq/L                                        3.5 - 5.0 
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,BUN,72.0,72.0,correct,H,H,,BUN                                                      72         mg/dL                                         7-20  
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Creatinine,3.4,3.4,correct,H,H,,Creatinine                                          3.4        mg/dL                                     0.6 - 1.2      
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,eGFR,90.0,90.0,correct,,,,eGFR                                                    90         mL/min/1.73m2                              > 60
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,Troponin I,0.39,0.39,correct,C,C,,Troponin |                                           0.39      ng/mL                                     0.00-0.04 H
+baseline_300dpi,baseline,0,0,300,0.0,0,0.0,0.0,LDL cholesterol,201.0,201.0,correct,H,H,,LDL cholesterol                                       201        mg/dL                                        < 100     
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Glucose (fasting),83.0,83.0,correct,,,,Glucose (fasting)                                    83         mg/dL                                       70 - 99
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,HbA1c,11.6,11.6,correct,H,H,,HbAic                                                   11.6       %                                              4.0-5.
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Hemoglobin,6.9,6.9,correct,L,L,,Hemoglobin                                      6.9       g/dL                                     12.0-15.5 L
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Ferritin,290.0,290.0,correct,H,H,,Ferritin                                                290       ng/mL                                       15 - 200  
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,WBC,13.0,13.0,correct,H,H,,WBC                                                  13.0       1049/L                                      4.5-11.0    
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Platelets,223.0,223.0,correct,,,,Platelets                                              223       1049/L                                      150 - 450
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Sodium,148.0,148.0,correct,H,H,,Sodium                                             148       mEq/L                                     135 - 145     H
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Potassium,6.4,6.4,correct,H,H,,Potassium                                            6.4        mEq/L                                      3.5 - 5.0    
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,BUN,72.0,72.0,correct,H,H,,BUN                                                  72         mg/dL                                       7-20        
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Creatinine,3.4,3.4,correct,H,H,,Creatinine                                            3.4        mg/dL                                       0.6 - 1.2  
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,eGFR,90.0,90.0,correct,,,,eGFR                                                 90         mL/min/1.73m2                            > 60
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,Troponin I,0.39,0.39,correct,C,C,,Troponin |                                         0.39      ng/mL                                    0.00-0.04 H
+dpi_200,resolution,200,0,200,0.0,0,0.0,0.0,LDL cholesterol,201.0,201.0,correct,H,H,,LDL cholesterol                                      201        mg/dL                                       < 100       
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Glucose (fasting),83.0,83.0,correct,,,,Glucose (fasting)                                83        mg/dL.                                  70-99
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,HbA1c,11.6,11.6,correct,H,H,,HbAt1c                                      11.6     %                                   4.0-5.6     H
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Hemoglobin,6.9,6.9,correct,L,L,,Hemoglobin                                       6.9       g/dL                                      12.0-15.5 L
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Ferritin,290.0,290.0,correct,H,H,,Ferritin                                             290       ng/mL.                                    15 - 200      H
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,WBC,13.0,13.0,correct,H,H,,WBC                                                13.0      1049/L                                     4.5-11.0     H
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Platelets,223.0,223.0,correct,,,,Platelets                                              223       1049/L                                      150 - 450
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Sodium,148.0,148.0,correct,H,H,,Sodium                                          148      mEq/L                                  135 - 145     H
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Potassium,6.4,6.4,correct,H,H,,Potassium                                               6.4         mEq/L                                         3.5-5.
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,BUN,72.0,72.0,correct,H,H,,BUN                                                  72         mg/dL.                                       7-20       
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Creatinine,3.4,3.4,correct,H,H,,Creatinine                                         3.4        mg/dL.                                    0.6 - 1.2      H
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,eGFR,90.0,90.0,correct,,,,eGFR                                                    90         mL/min/1.73m2                              > 60
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,Troponin I,0.39,0.39,correct,C,C,,Troponin |                                           0.39      ng/mL.                                     0.00-0.04 H
+dpi_150,resolution,150,0,150,0.0,0,0.0,0.0,LDL cholesterol,201.0,201.0,correct,H,H,,LDL cholesterol                                      201        mg/dL.                                       < 100      
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Glucose (fasting),83.0,83.0,correct,,,,Glucose (fasting)                               83       mg/dL                                 70-99
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,HbA1c,11.6,11.6,correct,H,H,,HbAic.                                    11.6     %                                 4.0-5.6     H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Hemoglobin,6.9,69.0,corrupted,L,H,1.0,Hemoglobin                                    69       g/d                                   12.0-15.5 L
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Ferritin,290.0,290.0,correct,H,H,,Ferritin                                         290      ng/mL                                 15 - 200      H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,WBC,13.0,13.0,correct,H,H,,WBC                                           13.0      10°9/L                                 4.5-11.0     H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Platelets,223.0,223.0,correct,,,,Platelets                                       223      10°9/L                                 150 - 450
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Sodium,148.0,148.0,correct,H,H,,Sodium                                        148      mEq/L                                 135 - 145     H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Potassium,6.4,6.4,correct,H,H,,Potassium                                     6.4       mEq/L                                 3.5 -5.0      H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,BUN,72.0,72.0,correct,H,H,,BUN                                           72       mg/dL                                 7-20        H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Creatinine,3.4,3.4,correct,H,H,,Creatinine                                      3.4       mg/dL                                 0.6-1.2      H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,eGFR,90.0,90.0,correct,,,,eGFR                                          90       mL/min/1.73m2                        >60
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,Troponin I,0.39,0.39,correct,C,C,,Troponin |                                      0.39      ng/mL                                 0.00-0.04 H
+dpi_120,resolution,120,0,120,0.0,0,0.0,0.0,LDL cholesterol,201.0,201.0,correct,H,H,,LDL cholesterol                                201      mg/dL                                 < 100        H
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Glucose (fasting),83.0,83.0,correct,,,,Glucose (fasting)                                      83         mg/dL.                                         70-99
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,HbA1c,11.6,11.6,correct,H,H,,HbAtc.                              11.6    %                           4.0-5.6    H
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Hemoglobin,6.9,69.0,corrupted,L,H,1.0,Hemoglobin                     69    gidL.                     120-155 L
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Ferritin,290.0,290.0,correct,H,H,,Ferritin                                                            290         ng/mL                                   
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,WBC,13.0,,label_not_found,H,,,
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Platelets,223.0,223.0,correct,,,,Platelets                                              223° 10°9/L                                      180-450
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Sodium,148.0,148.0,correct,H,H,,Sodium                                       148 mEgiL                                195-145
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Potassium,6.4,64.0,corrupted,H,H,1.0,Potassium                                            64 Egil                                      35-50  H
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,BUN,72.0,72.0,correct,H,H,,BUN                                                  72         mg/dL                                       7-20        
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Creatinine,3.4,3.4,correct,H,H,,Creatinine                                     3.4       mg/dL                                0.6 -1.2      H
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,eGFR,90.0,90.0,correct,,,,GFR                                                 90 mLiminit.73m2                            > 60
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,Troponin I,0.39,0.39,correct,C,C,,Troponin |                                              0.39       ng/mL                                        0.00-0.0
+dpi_100,resolution,100,0,100,0.0,0,0.0,0.0,LDL cholesterol,201.0,201.0,correct,H,H,,LDL cholesterol                                          201        mg/dL                                           < 10
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Glucose (fasting),83.0,63.0,corrupted,,L,,Glucose (astng)               63 mola                70-99
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,HbA1c,11.6,,label_not_found,H,,,
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Hemoglobin,6.9,69.0,corrupted,L,H,1.0,Hemoglobin             69 iat             120-155 L
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Ferritin,290.0,200.0,corrupted,H,,,Ferstin                  200. ngimL               15-200 H
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,WBC,13.0,,label_not_found,H,,,
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Platelets,223.0,223.0,correct,,,,Platelets                    223 10°91                150-450
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Sodium,148.0,148.0,correct,H,H,,Sodium                  148 meq.               195-145 H
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Potassium,6.4,64.0,corrupted,H,H,1.0,Potassium                 64 meqh.               35-504
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,BUN,72.0,72.0,correct,H,H,,BUN                   72 maid               7-2 4
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Creatinine,3.4,4.0,corrupted,H,H,,Creatinine                 a4 mg               06-12 4
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,eGFR,90.0,90.0,correct,,,,oGFR                                              90 mlimint.70m2                          >60
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,Troponin I,0.39,39.0,corrupted,C,C,2.0,Troponin              039 gm            000-008 4
+dpi_85,resolution,85,0,85,0.0,0,0.0,0.0,LDL cholesterol,201.0,201.0,correct,H,H,,LDL cholesterol               201 gid               <100 oH
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Glucose (fasting),83.0,83.0,correct,,,,Glucose (sing)              83 mais.               70-99
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,HbA1c,11.6,,label_not_found,H,,,
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Hemoglobin,6.9,69.0,corrupted,L,H,1.0,Hemoglobin             69 git             120-155
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Ferritin,290.0,,label_not_found,H,,,
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,WBC,13.0,,label_not_found,H,,,
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Platelets,223.0,223.0,correct,,,,"Platelets                 223 10°91,              150-450"
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Sodium,148.0,148.0,correct,H,H,,Sodium                 148 meg              105-145
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Potassium,6.4,64.0,corrupted,H,H,1.0,Potassium                64 megt              35-50 H
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,BUN,72.0,2.0,corrupted,H,L,,BUN                  2 mais              7-0 0H
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Creatinine,3.4,34.0,corrupted,H,H,1.0,Creatinine                34 mal              06-12 H
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,eGFR,90.0,80.0,corrupted,,,,GFR                                   80 mLimint-73m2                    260
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,Troponin I,0.39,39.0,corrupted,C,C,2.0,Troponin              039 gin            000-004 H
+dpi_72,resolution,72,0,72,0.0,0,0.0,0.0,LDL cholesterol,201.0,201.0,correct,H,H,,LDL cholesterol              201 mai              <10 OH
