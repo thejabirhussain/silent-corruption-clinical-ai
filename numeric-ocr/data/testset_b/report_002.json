@@ -1,0 +1,193 @@
+{
+ "pdf": "report_002.pdf",
+ "font": "Times",
+ "layout": [
+  "Test",
+  "Result",
+  "Units",
+  "Reference",
+  ""
+ ],
+ "analytes": [
+  {
+   "name": "Platelets",
+   "value": 303.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Chloride",
+   "value": 97.0,
+   "decimals": 0,
+   "lo": 98,
+   "hi": 107,
+   "plaus": [
+    60,
+    150
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Potassium",
+   "value": 7.0,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    1.0,
+    10.0
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Glucose (fasting)",
+   "value": 54.0,
+   "decimals": 0,
+   "lo": 70,
+   "hi": 99,
+   "plaus": [
+    10,
+    1500
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "HbA1c",
+   "value": 2.8,
+   "decimals": 1,
+   "lo": 4.0,
+   "hi": 5.6,
+   "plaus": [
+    2,
+    20
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Ferritin",
+   "value": 418.0,
+   "decimals": 0,
+   "lo": 15,
+   "hi": 200,
+   "plaus": [
+    0.1,
+    10000
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Albumin",
+   "value": 6.0,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Calcium",
+   "value": 8.4,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "ALT",
+   "value": 4.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Magnesium",
+   "value": 1.8,
+   "decimals": 1,
+   "lo": 1.7,
+   "hi": 2.2,
+   "plaus": [
+    0.3,
+    6
+   ],
+   "flag": ""
+  },
+  {
+   "name": "BUN",
+   "value": 8.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 20,
+   "plaus": [
+    1,
+    300
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Bilirubin (total)",
+   "value": 1.9,
+   "decimals": 1,
+   "lo": 0.1,
+   "hi": 1.2,
+   "plaus": [
+    0.05,
+    40
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Hematocrit",
+   "value": 36.1,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": ""
+  },
+  {
+   "name": "TSH",
+   "value": 2.49,
+   "decimals": 2,
+   "lo": 0.4,
+   "hi": 4.0,
+   "plaus": [
+    0.005,
+    150
+   ],
+   "flag": ""
+  },
+  {
+   "name": "AST",
+   "value": 2.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": "L"
+  }
+ ]
+}

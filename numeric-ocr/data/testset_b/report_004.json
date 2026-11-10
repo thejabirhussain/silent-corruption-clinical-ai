@@ -1,0 +1,181 @@
+{
+ "pdf": "report_004.pdf",
+ "font": "Times",
+ "layout": [
+  "Test",
+  "Result",
+  "Units",
+  "Reference",
+  "Flag"
+ ],
+ "analytes": [
+  {
+   "name": "Calcium",
+   "value": 9.0,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Bicarbonate",
+   "value": 35.0,
+   "decimals": 0,
+   "lo": 22,
+   "hi": 29,
+   "plaus": [
+    5,
+    50
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Hematocrit",
+   "value": 42.5,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Magnesium",
+   "value": 2.0,
+   "decimals": 1,
+   "lo": 1.7,
+   "hi": 2.2,
+   "plaus": [
+    0.3,
+    6
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Lactate",
+   "value": 0.1,
+   "decimals": 1,
+   "lo": 0.5,
+   "hi": 2.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Bilirubin (total)",
+   "value": 0.1,
+   "decimals": 1,
+   "lo": 0.1,
+   "hi": 1.2,
+   "plaus": [
+    0.05,
+    40
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Albumin",
+   "value": 4.5,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": ""
+  },
+  {
+   "name": "WBC",
+   "value": 8.7,
+   "decimals": 1,
+   "lo": 4.5,
+   "hi": 11.0,
+   "plaus": [
+    0.1,
+    500
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Ferritin",
+   "value": 178.0,
+   "decimals": 0,
+   "lo": 15,
+   "hi": 200,
+   "plaus": [
+    0.1,
+    10000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "ALT",
+   "value": 2.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Platelets",
+   "value": 534.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "CRP",
+   "value": 2.7,
+   "decimals": 1,
+   "lo": 0.0,
+   "hi": 5.0,
+   "plaus": [
+    0.0,
+    600
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Chloride",
+   "value": 94.0,
+   "decimals": 0,
+   "lo": 98,
+   "hi": 107,
+   "plaus": [
+    60,
+    150
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "TSH",
+   "value": 1.03,
+   "decimals": 2,
+   "lo": 0.4,
+   "hi": 4.0,
+   "plaus": [
+    0.005,
+    150
+   ],
+   "flag": ""
+  }
+ ]
+}

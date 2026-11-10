@@ -1,0 +1,157 @@
+{
+ "pdf": "report_000.pdf",
+ "font": "Times",
+ "layout": [
+  "Test",
+  "Result",
+  "Units",
+  "Reference",
+  "Flag"
+ ],
+ "analytes": [
+  {
+   "name": "Bicarbonate",
+   "value": 23.0,
+   "decimals": 0,
+   "lo": 22,
+   "hi": 29,
+   "plaus": [
+    5,
+    50
+   ],
+   "flag": ""
+  },
+  {
+   "name": "ALT",
+   "value": 12.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "LDL cholesterol",
+   "value": 88.0,
+   "decimals": 0,
+   "lo": 0,
+   "hi": 99,
+   "plaus": [
+    5,
+    600
+   ],
+   "flag": ""
+  },
+  {
+   "name": "TSH",
+   "value": 1.53,
+   "decimals": 2,
+   "lo": 0.4,
+   "hi": 4.0,
+   "plaus": [
+    0.005,
+    150
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hematocrit",
+   "value": 39.5,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Sodium",
+   "value": 130.0,
+   "decimals": 0,
+   "lo": 135,
+   "hi": 145,
+   "plaus": [
+    90,
+    190
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Albumin",
+   "value": 4.6,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": ""
+  },
+  {
+   "name": "AST",
+   "value": 73.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "eGFR",
+   "value": 135.0,
+   "decimals": 0,
+   "lo": 60,
+   "hi": 200,
+   "plaus": [
+    0,
+    200
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Magnesium",
+   "value": 1.8,
+   "decimals": 1,
+   "lo": 1.7,
+   "hi": 2.2,
+   "plaus": [
+    0.3,
+    6
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Calcium",
+   "value": 12.6,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "INR",
+   "value": 1.1,
+   "decimals": 1,
+   "lo": 0.8,
+   "hi": 1.2,
+   "plaus": [
+    0.5,
+    15
+   ],
+   "flag": ""
+  }
+ ]
+}

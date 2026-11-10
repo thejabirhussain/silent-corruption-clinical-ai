@@ -1,0 +1,169 @@
+{
+ "pdf": "report_011.pdf",
+ "font": "Courier",
+ "layout": [
+  "Investigation",
+  "Result",
+  "Units",
+  "Normal Range",
+  ""
+ ],
+ "analytes": [
+  {
+   "name": "Bicarbonate",
+   "value": 27.0,
+   "decimals": 0,
+   "lo": 22,
+   "hi": 29,
+   "plaus": [
+    5,
+    50
+   ],
+   "flag": ""
+  },
+  {
+   "name": "eGFR",
+   "value": 170.0,
+   "decimals": 0,
+   "lo": 60,
+   "hi": 200,
+   "plaus": [
+    0,
+    200
+   ],
+   "flag": ""
+  },
+  {
+   "name": "ALT",
+   "value": 46.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "AST",
+   "value": 15.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Lactate",
+   "value": 3.9,
+   "decimals": 1,
+   "lo": 0.5,
+   "hi": 2.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "INR",
+   "value": 0.9,
+   "decimals": 1,
+   "lo": 0.8,
+   "hi": 1.2,
+   "plaus": [
+    0.5,
+    15
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Magnesium",
+   "value": 1.4,
+   "decimals": 1,
+   "lo": 1.7,
+   "hi": 2.2,
+   "plaus": [
+    0.3,
+    6
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Creatinine",
+   "value": 0.33,
+   "decimals": 2,
+   "lo": 0.6,
+   "hi": 1.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "TSH",
+   "value": 2.66,
+   "decimals": 2,
+   "lo": 0.4,
+   "hi": 4.0,
+   "plaus": [
+    0.005,
+    150
+   ],
+   "flag": ""
+  },
+  {
+   "name": "WBC",
+   "value": 10.8,
+   "decimals": 1,
+   "lo": 4.5,
+   "hi": 11.0,
+   "plaus": [
+    0.1,
+    500
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Platelets",
+   "value": 505.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Bilirubin (total)",
+   "value": 0.6,
+   "decimals": 1,
+   "lo": 0.1,
+   "hi": 1.2,
+   "plaus": [
+    0.05,
+    40
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Sodium",
+   "value": 135.0,
+   "decimals": 0,
+   "lo": 135,
+   "hi": 145,
+   "plaus": [
+    90,
+    190
+   ],
+   "flag": ""
+  }
+ ]
+}

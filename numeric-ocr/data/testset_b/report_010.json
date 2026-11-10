@@ -1,0 +1,157 @@
+{
+ "pdf": "report_010.pdf",
+ "font": "Times",
+ "layout": [
+  "Test",
+  "Result",
+  "Units",
+  "Reference",
+  ""
+ ],
+ "analytes": [
+  {
+   "name": "Hematocrit",
+   "value": 42.1,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": ""
+  },
+  {
+   "name": "ALT",
+   "value": 55.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "INR",
+   "value": 1.1,
+   "decimals": 1,
+   "lo": 0.8,
+   "hi": 1.2,
+   "plaus": [
+    0.5,
+    15
+   ],
+   "flag": ""
+  },
+  {
+   "name": "CRP",
+   "value": 7.9,
+   "decimals": 1,
+   "lo": 0.0,
+   "hi": 5.0,
+   "plaus": [
+    0.0,
+    600
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "TSH",
+   "value": 7.5,
+   "decimals": 2,
+   "lo": 0.4,
+   "hi": 4.0,
+   "plaus": [
+    0.005,
+    150
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Glucose (fasting)",
+   "value": 96.0,
+   "decimals": 0,
+   "lo": 70,
+   "hi": 99,
+   "plaus": [
+    10,
+    1500
+   ],
+   "flag": ""
+  },
+  {
+   "name": "BUN",
+   "value": 14.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 20,
+   "plaus": [
+    1,
+    300
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hemoglobin",
+   "value": 11.1,
+   "decimals": 1,
+   "lo": 12.0,
+   "hi": 15.5,
+   "plaus": [
+    2,
+    25
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Albumin",
+   "value": 4.4,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Chloride",
+   "value": 105.0,
+   "decimals": 0,
+   "lo": 98,
+   "hi": 107,
+   "plaus": [
+    60,
+    150
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Platelets",
+   "value": 298.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Potassium",
+   "value": 4.6,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    1.0,
+    10.0
+   ],
+   "flag": ""
+  }
+ ]
+}

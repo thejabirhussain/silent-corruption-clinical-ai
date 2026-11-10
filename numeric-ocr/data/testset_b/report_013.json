@@ -1,0 +1,193 @@
+{
+ "pdf": "report_013.pdf",
+ "font": "Courier",
+ "layout": [
+  "Analyte",
+  "Value",
+  "Unit",
+  "Reference Range",
+  "Flag"
+ ],
+ "analytes": [
+  {
+   "name": "Platelets",
+   "value": 370.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Albumin",
+   "value": 3.5,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": ""
+  },
+  {
+   "name": "INR",
+   "value": 0.7,
+   "decimals": 1,
+   "lo": 0.8,
+   "hi": 1.2,
+   "plaus": [
+    0.5,
+    15
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "WBC",
+   "value": 6.8,
+   "decimals": 1,
+   "lo": 4.5,
+   "hi": 11.0,
+   "plaus": [
+    0.1,
+    500
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Chloride",
+   "value": 110.0,
+   "decimals": 0,
+   "lo": 98,
+   "hi": 107,
+   "plaus": [
+    60,
+    150
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Hemoglobin",
+   "value": 11.5,
+   "decimals": 1,
+   "lo": 12.0,
+   "hi": 15.5,
+   "plaus": [
+    2,
+    25
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Bilirubin (total)",
+   "value": 0.6,
+   "decimals": 1,
+   "lo": 0.1,
+   "hi": 1.2,
+   "plaus": [
+    0.05,
+    40
+   ],
+   "flag": ""
+  },
+  {
+   "name": "eGFR",
+   "value": 173.0,
+   "decimals": 0,
+   "lo": 60,
+   "hi": 200,
+   "plaus": [
+    0,
+    200
+   ],
+   "flag": ""
+  },
+  {
+   "name": "ALT",
+   "value": 44.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Ferritin",
+   "value": 66.0,
+   "decimals": 0,
+   "lo": 15,
+   "hi": 200,
+   "plaus": [
+    0.1,
+    10000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hematocrit",
+   "value": 31.2,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Glucose (fasting)",
+   "value": 72.0,
+   "decimals": 0,
+   "lo": 70,
+   "hi": 99,
+   "plaus": [
+    10,
+    1500
+   ],
+   "flag": ""
+  },
+  {
+   "name": "AST",
+   "value": 12.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Lactate",
+   "value": 3.9,
+   "decimals": 1,
+   "lo": 0.5,
+   "hi": 2.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Calcium",
+   "value": 12.8,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": "H"
+  }
+ ]
+}

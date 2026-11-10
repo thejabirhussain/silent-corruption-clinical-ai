@@ -1,0 +1,128 @@
+{
+ "labnum2_rescale": {
+  "A": {
+   "n": 832,
+   "exact": 75.4,
+   "corrupted": 34,
+   "missing": 171,
+   "silent": 14,
+   "cer": 0.0096
+  },
+  "B": {
+   "n": 1988,
+   "exact": 75.5,
+   "corrupted": 268,
+   "missing": 220,
+   "silent": 101,
+   "cer": 0.0161
+  }
+ },
+ "rapidocr": {
+  "A": {
+   "n": 832,
+   "exact": 80.8,
+   "corrupted": 22,
+   "missing": 138,
+   "silent": 20,
+   "cer": 0.0852
+  },
+  "B": {
+   "n": 1988,
+   "exact": 77.9,
+   "corrupted": 58,
+   "missing": 382,
+   "silent": 40,
+   "cer": 0.0551
+  }
+ },
+ "tess_best": {
+  "A": {
+   "n": 832,
+   "exact": 66.8,
+   "corrupted": 63,
+   "missing": 213,
+   "silent": 41,
+   "cer": 0.0236
+  },
+  "B": {
+   "n": 1988,
+   "exact": 73.1,
+   "corrupted": 204,
+   "missing": 331,
+   "silent": 54,
+   "cer": 0.0469
+  }
+ },
+ "tess_best_rescale": {
+  "A": {
+   "n": 832,
+   "exact": 71.4,
+   "corrupted": 54,
+   "missing": 184,
+   "silent": 39,
+   "cer": 0.0224
+  },
+  "B": {
+   "n": 1988,
+   "exact": 83.9,
+   "corrupted": 89,
+   "missing": 231,
+   "silent": 29,
+   "cer": 0.0241
+  }
+ },
+ "tess_fast": {
+  "A": {
+   "n": 832,
+   "exact": 69.2,
+   "corrupted": 43,
+   "missing": 213,
+   "silent": 28,
+   "cer": 0.0167
+  },
+  "B": {
+   "n": 1988,
+   "exact": 75.1,
+   "corrupted": 193,
+   "missing": 303,
+   "silent": 60,
+   "cer": 0.043
+  }
+ },
+ "tess_fast_rescale": {
+  "A": {
+   "n": 832,
+   "exact": 73.2,
+   "corrupted": 37,
+   "missing": 186,
+   "silent": 19,
+   "cer": 0.0149
+  },
+  "B": {
+   "n": 1988,
+   "exact": 81.4,
+   "corrupted": 121,
+   "missing": 249,
+   "silent": 41,
+   "cer": 0.0129
+  }
+ },
+ "vlm-qwen2.5vl-3b": {
+  "A": {
+   "n": 260,
+   "exact": 85.0,
+   "corrupted": 16,
+   "missing": 23,
+   "silent": 9,
+   "cer": 0.0579
+  },
+  "B": {
+   "n": 339,
+   "exact": 100.0,
+   "corrupted": 0,
+   "missing": 0,
+   "silent": null,
+   "cer": 0.0032
+  }
+ }
+}

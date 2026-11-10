@@ -1,0 +1,205 @@
+{
+ "pdf": "report_006.pdf",
+ "font": "Times",
+ "layout": [
+  "Test",
+  "Result",
+  "Units",
+  "Reference",
+  ""
+ ],
+ "analytes": [
+  {
+   "name": "Bicarbonate",
+   "value": 17.0,
+   "decimals": 0,
+   "lo": 22,
+   "hi": 29,
+   "plaus": [
+    5,
+    50
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Potassium",
+   "value": 4.0,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    1.0,
+    10.0
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Bilirubin (total)",
+   "value": 0.7,
+   "decimals": 1,
+   "lo": 0.1,
+   "hi": 1.2,
+   "plaus": [
+    0.05,
+    40
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hemoglobin",
+   "value": 11.6,
+   "decimals": 1,
+   "lo": 12.0,
+   "hi": 15.5,
+   "plaus": [
+    2,
+    25
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Chloride",
+   "value": 102.0,
+   "decimals": 0,
+   "lo": 98,
+   "hi": 107,
+   "plaus": [
+    60,
+    150
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Lactate",
+   "value": 4.0,
+   "decimals": 1,
+   "lo": 0.5,
+   "hi": 2.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "WBC",
+   "value": 7.1,
+   "decimals": 1,
+   "lo": 4.5,
+   "hi": 11.0,
+   "plaus": [
+    0.1,
+    500
+   ],
+   "flag": ""
+  },
+  {
+   "name": "LDL cholesterol",
+   "value": 187.0,
+   "decimals": 0,
+   "lo": 0,
+   "hi": 99,
+   "plaus": [
+    5,
+    600
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Troponin I",
+   "value": 0.03,
+   "decimals": 2,
+   "lo": 0.0,
+   "hi": 0.04,
+   "plaus": [
+    0.0,
+    100
+   ],
+   "flag": ""
+  },
+  {
+   "name": "CRP",
+   "value": 1.9,
+   "decimals": 1,
+   "lo": 0.0,
+   "hi": 5.0,
+   "plaus": [
+    0.0,
+    600
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Glucose (fasting)",
+   "value": 141.0,
+   "decimals": 0,
+   "lo": 70,
+   "hi": 99,
+   "plaus": [
+    10,
+    1500
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Platelets",
+   "value": 238.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "eGFR",
+   "value": 3.0,
+   "decimals": 0,
+   "lo": 60,
+   "hi": 200,
+   "plaus": [
+    0,
+    200
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Creatinine",
+   "value": 1.99,
+   "decimals": 2,
+   "lo": 0.6,
+   "hi": 1.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Ferritin",
+   "value": 76.0,
+   "decimals": 0,
+   "lo": 15,
+   "hi": 200,
+   "plaus": [
+    0.1,
+    10000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Calcium",
+   "value": 12.8,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": "H"
+  }
+ ]
+}

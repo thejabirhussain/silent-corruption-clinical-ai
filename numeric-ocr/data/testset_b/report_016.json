@@ -1,0 +1,169 @@
+{
+ "pdf": "report_016.pdf",
+ "font": "Times",
+ "layout": [
+  "Test",
+  "Result",
+  "Units",
+  "Reference",
+  "Flag"
+ ],
+ "analytes": [
+  {
+   "name": "AST",
+   "value": 45.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "eGFR",
+   "value": 160.0,
+   "decimals": 0,
+   "lo": 60,
+   "hi": 200,
+   "plaus": [
+    0,
+    200
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Troponin I",
+   "value": 0.05,
+   "decimals": 2,
+   "lo": 0.0,
+   "hi": 0.04,
+   "plaus": [
+    0.0,
+    100
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "LDL cholesterol",
+   "value": 63.0,
+   "decimals": 0,
+   "lo": 0,
+   "hi": 99,
+   "plaus": [
+    5,
+    600
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Calcium",
+   "value": 10.4,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": ""
+  },
+  {
+   "name": "BUN",
+   "value": 1.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 20,
+   "plaus": [
+    1,
+    300
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Platelets",
+   "value": 98.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Chloride",
+   "value": 96.0,
+   "decimals": 0,
+   "lo": 98,
+   "hi": 107,
+   "plaus": [
+    60,
+    150
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "INR",
+   "value": 0.9,
+   "decimals": 1,
+   "lo": 0.8,
+   "hi": 1.2,
+   "plaus": [
+    0.5,
+    15
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Magnesium",
+   "value": 2.0,
+   "decimals": 1,
+   "lo": 1.7,
+   "hi": 2.2,
+   "plaus": [
+    0.3,
+    6
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hemoglobin",
+   "value": 11.6,
+   "decimals": 1,
+   "lo": 12.0,
+   "hi": 15.5,
+   "plaus": [
+    2,
+    25
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Lactate",
+   "value": 0.7,
+   "decimals": 1,
+   "lo": 0.5,
+   "hi": 2.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hematocrit",
+   "value": 32.5,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": "L"
+  }
+ ]
+}

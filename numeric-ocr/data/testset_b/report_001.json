@@ -1,0 +1,181 @@
+{
+ "pdf": "report_001.pdf",
+ "font": "Courier",
+ "layout": [
+  "Analyte",
+  "Value",
+  "Unit",
+  "Reference Range",
+  "Flag"
+ ],
+ "analytes": [
+  {
+   "name": "Calcium",
+   "value": 7.8,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "eGFR",
+   "value": 31.0,
+   "decimals": 0,
+   "lo": 60,
+   "hi": 200,
+   "plaus": [
+    0,
+    200
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Hemoglobin",
+   "value": 10.8,
+   "decimals": 1,
+   "lo": 12.0,
+   "hi": 15.5,
+   "plaus": [
+    2,
+    25
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Creatinine",
+   "value": 0.51,
+   "decimals": 2,
+   "lo": 0.6,
+   "hi": 1.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Bilirubin (total)",
+   "value": 0.1,
+   "decimals": 1,
+   "lo": 0.1,
+   "hi": 1.2,
+   "plaus": [
+    0.05,
+    40
+   ],
+   "flag": ""
+  },
+  {
+   "name": "AST",
+   "value": 72.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Magnesium",
+   "value": 1.8,
+   "decimals": 1,
+   "lo": 1.7,
+   "hi": 2.2,
+   "plaus": [
+    0.3,
+    6
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hematocrit",
+   "value": 34.8,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "LDL cholesterol",
+   "value": 69.0,
+   "decimals": 0,
+   "lo": 0,
+   "hi": 99,
+   "plaus": [
+    5,
+    600
+   ],
+   "flag": ""
+  },
+  {
+   "name": "ALT",
+   "value": 109.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Albumin",
+   "value": 3.5,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Platelets",
+   "value": 271.0,
+   "decimals": 0,
+   "lo": 150,
+   "hi": 450,
+   "plaus": [
+    1,
+    2000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Potassium",
+   "value": 3.0,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    1.0,
+    10.0
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Ferritin",
+   "value": 394.0,
+   "decimals": 0,
+   "lo": 15,
+   "hi": 200,
+   "plaus": [
+    0.1,
+    10000
+   ],
+   "flag": "H"
+  }
+ ]
+}

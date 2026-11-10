@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/train_lines/
+data/train_lines_v2/
+results/cache/
+models/eng_best.traineddata

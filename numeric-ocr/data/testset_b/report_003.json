@@ -1,0 +1,169 @@
+{
+ "pdf": "report_003.pdf",
+ "font": "Courier",
+ "layout": [
+  "Investigation",
+  "Result",
+  "Units",
+  "Normal Range",
+  ""
+ ],
+ "analytes": [
+  {
+   "name": "Hematocrit",
+   "value": 32.4,
+   "decimals": 1,
+   "lo": 36.0,
+   "hi": 46.0,
+   "plaus": [
+    5,
+    75
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Albumin",
+   "value": 3.7,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": ""
+  },
+  {
+   "name": "HbA1c",
+   "value": 7.3,
+   "decimals": 1,
+   "lo": 4.0,
+   "hi": 5.6,
+   "plaus": [
+    2,
+    20
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "AST",
+   "value": 23.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Potassium",
+   "value": 3.7,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    1.0,
+    10.0
+   ],
+   "flag": ""
+  },
+  {
+   "name": "TSH",
+   "value": 0.24,
+   "decimals": 2,
+   "lo": 0.4,
+   "hi": 4.0,
+   "plaus": [
+    0.005,
+    150
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "BUN",
+   "value": 28.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 20,
+   "plaus": [
+    1,
+    300
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Ferritin",
+   "value": 164.0,
+   "decimals": 0,
+   "lo": 15,
+   "hi": 200,
+   "plaus": [
+    0.1,
+    10000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Glucose (fasting)",
+   "value": 98.0,
+   "decimals": 0,
+   "lo": 70,
+   "hi": 99,
+   "plaus": [
+    10,
+    1500
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Bicarbonate",
+   "value": 23.0,
+   "decimals": 0,
+   "lo": 22,
+   "hi": 29,
+   "plaus": [
+    5,
+    50
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Magnesium",
+   "value": 1.6,
+   "decimals": 1,
+   "lo": 1.7,
+   "hi": 2.2,
+   "plaus": [
+    0.3,
+    6
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "LDL cholesterol",
+   "value": 5,
+   "decimals": 0,
+   "lo": 0,
+   "hi": 99,
+   "plaus": [
+    5,
+    600
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Calcium",
+   "value": 9.5,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": ""
+  }
+ ]
+}

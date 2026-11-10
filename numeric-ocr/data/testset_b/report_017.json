@@ -1,0 +1,193 @@
+{
+ "pdf": "report_017.pdf",
+ "font": "Courier",
+ "layout": [
+  "Analyte",
+  "Value",
+  "Unit",
+  "Reference Range",
+  "Flag"
+ ],
+ "analytes": [
+  {
+   "name": "Creatinine",
+   "value": 0.57,
+   "decimals": 2,
+   "lo": 0.6,
+   "hi": 1.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "Albumin",
+   "value": 2.7,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    0.5,
+    7
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "TSH",
+   "value": 0.55,
+   "decimals": 2,
+   "lo": 0.4,
+   "hi": 4.0,
+   "plaus": [
+    0.005,
+    150
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Bilirubin (total)",
+   "value": 1.9,
+   "decimals": 1,
+   "lo": 0.1,
+   "hi": 1.2,
+   "plaus": [
+    0.05,
+    40
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "HbA1c",
+   "value": 5.3,
+   "decimals": 1,
+   "lo": 4.0,
+   "hi": 5.6,
+   "plaus": [
+    2,
+    20
+   ],
+   "flag": ""
+  },
+  {
+   "name": "AST",
+   "value": 10.0,
+   "decimals": 0,
+   "lo": 10,
+   "hi": 40,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Bicarbonate",
+   "value": 35.0,
+   "decimals": 0,
+   "lo": 22,
+   "hi": 29,
+   "plaus": [
+    5,
+    50
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Potassium",
+   "value": 4.0,
+   "decimals": 1,
+   "lo": 3.5,
+   "hi": 5.0,
+   "plaus": [
+    1.0,
+    10.0
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Hemoglobin",
+   "value": 13.4,
+   "decimals": 1,
+   "lo": 12.0,
+   "hi": 15.5,
+   "plaus": [
+    2,
+    25
+   ],
+   "flag": ""
+  },
+  {
+   "name": "Calcium",
+   "value": 10.2,
+   "decimals": 1,
+   "lo": 8.5,
+   "hi": 10.5,
+   "plaus": [
+    3,
+    20
+   ],
+   "flag": ""
+  },
+  {
+   "name": "ALT",
+   "value": 9.0,
+   "decimals": 0,
+   "lo": 7,
+   "hi": 56,
+   "plaus": [
+    1,
+    5000
+   ],
+   "flag": ""
+  },
+  {
+   "name": "WBC",
+   "value": 3.4,
+   "decimals": 1,
+   "lo": 4.5,
+   "hi": 11.0,
+   "plaus": [
+    0.1,
+    500
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "CRP",
+   "value": 10.5,
+   "decimals": 1,
+   "lo": 0.0,
+   "hi": 5.0,
+   "plaus": [
+    0.0,
+    600
+   ],
+   "flag": "H"
+  },
+  {
+   "name": "Lactate",
+   "value": 0.2,
+   "decimals": 1,
+   "lo": 0.5,
+   "hi": 2.2,
+   "plaus": [
+    0.1,
+    30
+   ],
+   "flag": "L"
+  },
+  {
+   "name": "eGFR",
+   "value": 194.0,
+   "decimals": 0,
+   "lo": 60,
+   "hi": 200,
+   "plaus": [
+    0,
+    200
+   ],
+   "flag": ""
+  }
+ ]
+}
