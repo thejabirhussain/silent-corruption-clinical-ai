@@ -17,6 +17,7 @@
 \usepackage{caption}
 \usepackage{authblk}
 \usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
 \usepackage{microtype}
 \usepackage[numbers,sort&compress,square]{natbib}
 
@@ -44,44 +45,43 @@ and what actually prevents it}
 
 \begin{abstract}
 \noindent
-Clinical decision support systems increasingly read patient data from document images, where
-optical character recognition sits between the page and every downstream inference. Reported
-accuracy for that stage is usually character-level, and a laboratory value is not a character.
-We measured the image-to-value path of a retrieval-based clinical decision support prototype
-under controlled image degradation, using synthetic reports carrying exact machine-readable
-ground truth for 13 analytes, with the document as the experimental unit across 10 independent
-reports and 7 scan resolutions. At 100~dpi, character accuracy remained at
-88.9\% while 32.3\% of laboratory values were misread and a further
-10.0\% were not read at all. Of 188 corrupted values, 89 (47.3\%)
-carried the same abnormality flag as the true value, leaving the error invisible to the
-alerting layer. We identify the mechanism: because abnormality flags are threshold
-quantisations, corruption of a value that was already outside its reference range is
-substantially more likely to preserve the flag than corruption of a normal value. Treating the
-document as the unit of analysis to respect clustering, the silent share is 65.3\% for
-corruptions of abnormal values against 22.3\% for normal ones, a paired difference of 43.0
-percentage points (Wilcoxon $p = 0.0078$, 95\% bootstrap CI 26.8 to 58.0), with the direction
-holding in all eight documents that produced both. Fourteen of fifteen corrupted troponin readings were hundredfold
-overstatements that retained the \emph{Critical} flag. A physiological plausibility bound
-rejected 104 of 188 corruptions and recovered 33 of the 89 silent ones, failing entirely for
-analytes whose plausible range is wide relative to their reference range. Substituting a
-large language model for the deterministic extractor repaired nothing.
-We then asked what does prevent the failure, comparing seven readers on 2{,}820 values across
-the original document and 20 held-out reports typeset in fonts no model had seen. Fine-tuning
-the recogniser was not the answer: it reached 100\% accuracy at low resolution on the document
-it was tuned for, while losing ground on unseen monospace text (66.3\% against 79.9\% for the
-stock model) and raising the silent-corruption count on held-out data from 60 to 101. Simply
-upscaling the page to 300~dpi before recognition was the single largest gain, taking low-resolution
-accuracy from 60.0\% to 98.5\% and reducing decimal-point losses from 109 to 11. A vision--language
-model transcribed cleanly on legible pages but, on fax-quality pages, produced fluent values that
-were not printed and moved them toward the normal range. No single reader was safe everywhere.
-Requiring agreement between two independently built readers caught every corruption we
-generated, 193 of 193 on the held-out set at a 19.8\% review rate, though zero observed failures
-in a finite sample bounds the undetected rate only to below roughly 2\% (exact 95\% CI 98.1 to
-100\%).
-These findings come from synthetic documents, and they bound no claim about real clinical
-performance; what they establish is that character-level accuracy is not a safety metric for
-pipelines that reduce measurements to flags, and that verification, not a better recogniser, is
-what makes such a pipeline safe.
+\textbf{Background:} Clinical decision support systems increasingly read patient data from
+document images. Accuracy for that stage is reported at character level, and a laboratory value
+is not a character.
+
+\noindent \textbf{Methods:} We measured the image-to-value path of a retrieval-based clinical
+decision support prototype under controlled image degradation, using synthetic reports carrying
+exact machine-readable ground truth, with the document as the experimental unit. Four experiments were run: a degradation sweep over 832 readings from one
+document, a resolution study of 910 readings replicated across 10 reports, a comparison of seven
+recognition approaches over the same 832 readings plus 1{,}988 readings from 20 held-out reports
+typeset in fonts no model had seen, and an evaluation of verification checks over those same
+extracted values. The 832 readings are shared between the first and third experiments by design,
+since the third re-reads the first experiment's document with each recognition approach.
+
+\noindent \textbf{Results:} At 100~dpi, character accuracy remained at 88.9\% while 32.3\% of
+laboratory values were misread. Of 188 corrupted values, 89 (47.3\%) carried the same
+abnormality flag as the truth and so were invisible to the alerting layer. Because flags are
+threshold quantisations, corruption of an already-abnormal value was more often silent than
+corruption of a normal one (61.7\% against 22.1\%; risk ratio 2.80, 95\% CI 1.75--4.47), an
+effect that held with the document as the unit of analysis (paired difference 43.0 percentage
+points, $p = 0.0078$). Fine-tuning the recogniser did not help: it read the document it was
+tuned for perfectly at low resolution, but against its own base model under identical
+preprocessing it lost 8.1 percentage points on held-out reports (unadjusted $p = 0.031$; this
+and the corresponding version~1 comparison do not survive correction for multiple testing). That
+aggregate conceals a reversal: the fine-tuned model was the most accurate reader on one half of
+the held-out set and the least accurate on the other. Upscaling the
+page before recognition was the largest single gain, improving low-resolution accuracy from
+60.0\% to 98.5\% and the held-out accuracy of the same base model by 11.0 points
+($p = 0.0001$). A vision--language model transcribed legible
+pages accurately but, on degraded pages, produced fluent values that were not printed and moved
+them toward the normal range. Requiring agreement between two independently built readers caught
+193 of 193 corruptions on held-out data at a 19.8\% review rate.
+
+\noindent \textbf{Conclusions:} Character-level accuracy is not a safety metric for pipelines
+that reduce measurements to flags, and the errors such pipelines hide fall disproportionately on
+patients whose values are already abnormal. In the conditions tested, verification by a second
+independent reader reduced undetected errors more than any improvement to the recogniser itself.
+All findings come from synthetic documents and bound no claim about performance in deployment.
 \end{abstract}
 
 \section{Introduction}
@@ -132,17 +132,17 @@ never saw. The fourth asks what catches the errors that remain.
 Our contributions are the following. We quantify the dissociation between character accuracy
 and value accuracy in a clinical extraction pipeline. We give a taxonomy of what corruption
 does to an abnormality flag, and show that the most common outcome is no change at all. We
-identify the mechanism behind that outcome, which is threshold quantisation, and show it is
-predicted by whether the true value was already abnormal. We evaluate a physiological
-plausibility bound and characterise where it systematically fails. We report that replacing the
-deterministic extractor with a language model repaired no error and introduced none.
-We analyse that mechanism with the document as the experimental unit, so that the effect does
-not rest on treating readings from one page as independent. We then show that fine-tuning the
-recogniser is not the remedy it appears to be, that a
-one-line preprocessing change outperforms it on unseen material, that a vision--language model
-substitutes plausible invented values for illegible ones in a direction that is clinically
-unsafe, and that agreement between two independently built readers eliminates undetected wrong
-values in both test sets.
+identify the mechanism behind that outcome, which is threshold quantisation, show that it is
+predicted by whether the true value was already abnormal, and analyse it with the document as
+the experimental unit so that the effect does not rest on treating readings from one page as
+independent. We evaluate a physiological plausibility bound and characterise where it
+systematically fails, and we report that replacing the deterministic extractor with a language
+model repaired no error and introduced none. We then show that fine-tuning the recogniser is not
+the remedy it appears to be, reading unseen typography less accurately than the base model it
+was built from, that a preprocessing change with no learned parameters outperforms it, that
+a vision--language model substitutes plausible invented values for illegible ones in a direction
+that moves results toward normality, and that requiring agreement between two independently
+built readers left no undetected wrong value in either test set.
 
 \section{Related work}
 
@@ -173,6 +173,16 @@ What this literature measures is how recognition quality affects extraction qual
 establish that fax-type distortion degrades extraction from medical documents
 \citep{yu2026benchmark}; Wang et al.\ establish that information absent from the representation
 cannot be recovered downstream \citep{wang2026keycoverage}. Both stop at the extracted field.
+
+\paragraph{Abnormality flags and what they hide.}
+A separate literature studies the flags themselves, and studies them from the opposite
+direction. Kilickaya and colleagues showed that standard reference ranges derived from healthy
+adults mark too many results abnormal in critically ill patients, producing false positive
+alerts and alert fatigue, and that customised ranges reduce them \citep{kilickaya2014ranges}.
+That work treats the flag as over-sensitive. We report the complementary failure: when the
+value reaching the flag is already wrong, the same threshold structure makes a predictable
+subset of those errors produce no alert at all. The two findings are consistent, since both
+follow from a threshold discarding the distance between a value and its boundary.
 
 Our contribution begins one step later. We ask what happens to a numerical error \emph{after}
 extraction, once the value has been compared against a reference range and reduced to an
@@ -408,7 +418,10 @@ The silent category is not distributed at random. Splitting the 188 corruptions 
 true value was already outside its reference range gives 61.7\% silent (95\% CI 52.7--69.9)
 among the 120 corruptions of abnormal values, against 22.1\% (95\% CI 13.8--33.3) among the 68
 corruptions of normal values (Figure~\ref{fig:mechanism}; Fisher exact
-$p = 1.6 \times 10^{-7}$, odds ratio 5.68).
+$p = 1.6 \times 10^{-7}$). Because corruption is a common outcome in both groups, the odds ratio
+of 5.68 overstates the multiplicative effect and we report the risk ratio instead: corruption of
+an already-abnormal value was 2.80 times as likely to be silent (95\% CI 1.75--4.47), a risk
+difference of 39.6 percentage points.
 
 That test assumes the 188 corruptions are independent, and they are not: they are clustered
 within 10 documents and 13 analytes, and corruptions sharing a document also share a rendering
@@ -510,7 +523,7 @@ errors.
 The corruption is established before either extractor sees the text, and a model reading the
 same damaged characters reproduces the same damaged number.
 
-\section{Can a better reader fix it?}
+\section{Experiment 3: can a better reader fix it?}
 
 Experiments~1 and 2 establish that the corruption happens and that the flagging layer cannot
 see it. The obvious response is to read the page better. Experiment~3 tests that response
@@ -519,10 +532,12 @@ to fine-tune the recogniser on in-domain data.
 
 \subsection{Test sets}
 
-\textbf{Test A} is the document and the 64 degradation runs of Experiment~1, giving 832 values.
-It measures performance on the material the system was studied on.
+\textbf{Test A} is the same document and the same 64 degradation runs as Experiment~1, giving
+832 readings per recognition approach. It is deliberately not new material: it measures each
+reader on exactly the conditions under which the original failure was characterised. Because it
+reuses Experiment~1's observations, the two experiments' totals must not be added together.
 
-\textbf{Test B} is held out. It comprises 20 further synthetic reports, 1{,}988 values, 12 to 18
+\noindent \textbf{Test B} is held out. It comprises 20 further synthetic reports, 1{,}988 values, 12 to 18
 analytes each, drawn across four column layouts and four laboratory identities, and rendered in
 \textbf{Times and Courier}. Neither font appears anywhere in the fine-tuning data. Each report
 is degraded under seven conditions: 300, 150, 120 and 100~dpi, an office scan, a phone
@@ -561,12 +576,12 @@ envelope, so no specific test value can have been memorised, though the analyte 
 reference ranges and number formatting are shared with the test generator (see Limitations).
 
 Line images with word-string box files are converted to \texttt{.lstmf} training records, and
-\texttt{lstmtraining} then continues from the stock English LSTM (\texttt{tessdata\_best}) at a
-learning rate of $10^{-4}$ for 10{,}000 iterations before \texttt{--stop\_training}. No early
+\texttt{lstmtraining} then continues from the stock English LSTM at a learning rate of
+$10^{-4}$ for 10{,}000 iterations before stopping. The base model is \texttt{tessdata\_best}. No early
 stopping or validation-based checkpoint selection was used; the final iteration is the released
 model. The resulting model is 15~MB and runs at the same speed as the stock float model.
-Recognition is run at \texttt{--psm 6} throughout, matching Experiments~1 and 2. Training logs
-for both versions are released with the code.
+Recognition uses page segmentation mode 6 throughout, matching Experiments~1 and 2, and the
+training logs for both versions are released with the code.
 
 \subsection{Analysis}
 
@@ -585,9 +600,12 @@ shows the per-document distributions.
 \begin{table}[t]
 \centering
 \caption{Exact value accuracy on the 20 held-out reports of Test~B, computed per document and
-summarised across them, with the pooled low-resolution figure from Test~A for reference.
-\emph{Silent} is the share of that reader's corruptions that preserved the abnormality flag,
-which is the quantity the flagging layer cannot see.}
+summarised across them, with the pooled low-resolution figure from Test~A for reference. Both
+fine-tuned models are built on \texttt{tessdata\_best} and are evaluated with rescaling, so the
+comparison that isolates the effect of fine-tuning is against \emph{Tesseract best + rescale}
+rather than against the stock model. \emph{Silent} is the share of that reader's corruptions
+that preserved the abnormality flag, which is the quantity the flagging layer cannot see. The
+low-resolution column is not reported for v1, which was re-evaluated on Test~B only.}
 \label{tab:engines}
 \small
 \begin{tabular}{lccccc}
@@ -597,7 +615,8 @@ Reader & Test B accuracy & SD between & $\leq$150~dpi & Corrupted & Silent \\
 \midrule
 Stock Tesseract 5.5      & 74.9\% & \phantom{0}5.7 & 60.0\% & 193 & 31.1\% \\
 Tesseract best           & 73.0\% & \phantom{0}6.3 & 41.5\% & 204 & 26.5\% \\
-Fine-tuned v2 + rescale  & 75.8\% & 10.5 & \textbf{100\%} & 268 & \textbf{37.7\%} \\
+Fine-tuned v1 + rescale  & 65.9\% & 14.6 & --- & 482 & \textbf{59.8\%} \\
+Fine-tuned v2 + rescale  & 75.8\% & 10.5 & \textbf{100\%} & 268 & 37.7\% \\
 PP-OCR (RapidOCR)        & 78.0\% & \phantom{0}3.4 & 95.4\% & \textbf{\phantom{0}58} & 69.0\% \\
 Stock + rescale          & 81.4\% & \phantom{0}2.7 & 98.5\% & 121 & 33.9\% \\
 Tesseract best + rescale & \textbf{83.9\%} & \textbf{\phantom{0}1.4} & 92.3\% & \phantom{0}89 & 32.6\% \\
@@ -624,35 +643,70 @@ That denominator deserves emphasis. The $\leq$150~dpi column covers five resolut
 on one document, so 65 readings in total, all sharing a single rendering and layout. It is the
 most favourable comparison available to the fine-tuned model and the least independent.
 
-On held-out reports it does not. Mean accuracy is 75.8\% against the stock model's 74.9\%, a
-difference of 0.8 percentage points that a paired test over the 20 documents does not
-distinguish from zero (Wilcoxon signed-rank, $p = 0.63$). It also produces more corrupted values
-than the model it was built to improve (268 against 193), and a larger share of those
-corruptions are silent (37.7\% against 31.1\%).
+On held-out reports it does not. Comparing it with the stock pipeline would confound two
+interventions, because the fine-tuned configuration is also rescaled, so we compare it against
+its own base model under identical preprocessing. Fine-tuned v2 with rescaling reaches 75.8\%
+against 83.9\% for \texttt{tessdata\_best} with rescaling alone: fine-tuning costs 8.1
+percentage points (Wilcoxon signed-rank over the 20 documents, unadjusted $p = 0.031$).
+Version~1 under the same comparison costs 18.0 points (unadjusted $p = 0.020$). Neither of these
+two comparisons survives correction for multiplicity across the five engine comparisons we
+report, and we return to this in the Limitations; the direction is consistent across both
+versions and across typefaces, but the inferential claim is not established at this sample size.
+Adding serif and monospace families to the training corpus recovered 9.8 points between the two
+versions ($p = 0.0015$), which narrowed the deficit without removing it.
+
+Fine-tuning also produces more corrupted values than the base model it was built to improve
+(268 against 89), and a larger share of those corruptions are silent (37.7\% against 32.6\%).
 
 The between-document standard deviation is the more revealing number. The fine-tuned model
 varies across documents with an SD of 10.5 percentage points, against 1.4 for the best rescaling
 configuration. It is not merely no better on average; it is unpredictable, which for a clinical
 pipeline is the worse property.
 
-The failure is interpretable, and it is specific to typography. Test~B is evenly split, 10
-reports in Times and 10 in Courier, which separates the two cases
-(Table~\ref{tab:fonts}). The fine-tuned model is the best reader in the panel on unseen Times at
-85.3\%, and the worst on unseen Courier at 66.3\%, against 84.4\% for the base model it was
-built from under the same rescaling. It gains 1.9 percentage points on the serif face and loses
-18.1 on the monospace one.
+The loss is not uniform, and describing it as a general decline would misstate the data.
+Test~B is evenly split, 10 reports in Times and 10 in Courier
+(Table~\ref{tab:fonts}). On Times the fine-tuned v2 model is the \emph{best} reader in the
+panel, at 85.3\% against 83.4\% for the base model under the same rescaling. On Courier it is
+the worst, at 66.3\% against 84.4\%. Version~1 shows the same asymmetry more sharply: 85.0\% on
+Times, 46.8\% on Courier. Fine-tuning therefore improved one half of the held-out set and
+damaged the other, and the aggregate deficit of 8.1 points is the net of those two opposite
+movements rather than a consistent penalty. Any claim that the fine-tuned model is simply worse
+would be wrong; what it is, is unpredictable across material it has not seen.
 
-The mechanism is a word-segmentation artefact. In monospace text the inter-character gap around
-a decimal point is as wide as a space, and a model trained only on proportional faces reads
-Courier \texttt{7.8} as \texttt{7 . 8}, which the row parser truncates to 7. Version~1 of the
-fine-tune, trained on sans-serif faces alone, exhibited this severely. Version~2 added serif and
-monospace families to the training mix and reduced but did not remove it.
+One caution about attribution. The two halves of Test~B differ in more than typeface: each
+font was paired with its own pair of column layouts, so no Times report uses a Courier report's
+column headers and vice versa. Typeface is therefore aliased with layout, and the group
+difference in Table~\ref{tab:fonts} cannot be attributed to typeface alone by this design.
+
+The mechanism, however, is visible directly in the recognition output rather than inferred from
+the grouping. In monospace text the inter-character gap around a decimal point is as wide as a
+space, and a model trained only on proportional faces emits the digits and the point as separate
+tokens: Courier \texttt{7.8} is read as \texttt{7 . 8}, which the row parser truncates to 7.
+Counting corrupted readings whose OCR line contains digits separated by whitespace around a
+decimal point, version~1 produces this signature in 287 of its 482 corruptions and version~2 in
+37 of 268, in every case on Courier and never on Times. Neither the base model nor either
+rescaled stock configuration produces it at all. A column layout determines which number a
+parser selects from a line; it cannot insert whitespace inside a numeric token. The signature
+is therefore evidence about character spacing specifically, and it is confined to the fine-tuned
+models.
+
+Version~1 of the fine-tune, trained on sans-serif faces alone, exhibits this severely. Its
+result files had not been retained, so we re-ran it on Test~B for this manuscript: it reads
+unseen Times at 85.0\% and unseen Courier at 46.8\%, a gap of 38.2 percentage points, producing
+482 corrupted values of which 288 are silent. Version~2 added serif and monospace families to
+the training mix and halved the gap to 19.0 points, but did not remove it. The progression is
+the clearest statement of the problem: adding font diversity to the training corpus reduces the
+dependence on typography without eliminating it, while the configuration that never learned
+typography at all shows no dependence.
 
 \begin{table}[t]
 \centering
 \caption{Exact value accuracy on Test~B by typeface, 10 reports each. Neither face appears in
-any fine-tuning corpus. The fine-tuned model is the only reader whose accuracy depends strongly
-on which unseen face it meets.}
+any fine-tuning corpus. \textbf{Typeface is aliased with layout in this design}: each font was
+paired with its own two column layouts, so these columns differ in both respects and the
+difference cannot be attributed to typeface alone. The fine-tuned models are the only readers
+whose accuracy differs sharply between the two halves, and the direction reverses: both are the
+best reader in the panel on Times and the worst on Courier.}
 \label{tab:fonts}
 \small
 \begin{tabular}{lccc}
@@ -661,7 +715,8 @@ Reader & Times & Courier & Difference \\
 \midrule
 Stock Tesseract 5.5      & 71.0\% & 78.8\% & $-7.8$ \\
 Tesseract best           & 67.8\% & 78.0\% & $-10.2$ \\
-Fine-tuned v2 + rescale  & \textbf{85.3\%} & \textbf{66.3\%} & $\mathbf{+19.0}$ \\
+Fine-tuned v1 + rescale  & 85.0\% & \textbf{46.8\%} & $\mathbf{+38.2}$ \\
+Fine-tuned v2 + rescale  & \textbf{85.3\%} & 66.3\% & $+19.0$ \\
 PP-OCR (RapidOCR)        & 78.4\% & 77.4\% & $+1.0$ \\
 Stock + rescale          & 83.0\% & 79.9\% & $+3.1$ \\
 Tesseract best + rescale & 83.4\% & 84.4\% & $-1.0$ \\
@@ -672,11 +727,13 @@ Tesseract best + rescale & 83.4\% & 84.4\% & $-1.0$ \\
 \subsubsection{Upscaling the page is the single largest gain}
 
 Rescaling to at least 300~dpi before recognition requires no training, no new model and no
-change of engine. Over the 20 held-out documents it improves the stock model by 6.5 percentage
-points ($p = 0.0012$) and \texttt{tessdata\_best} by 9.0 points relative to stock
-($p = 0.0001$), and it beats the fine-tuned model by 8.1 points ($p = 0.031$). It takes
-low-resolution accuracy on Test~A from 60.0\% to 98.5\% and reduces decimal-point losses on
-Test~B from 109 to 11.
+change of engine. Each comparison below holds the recognition model fixed and varies only
+preprocessing. Over the 20 held-out documents, rescaling improves the stock model by 6.5
+percentage points ($p = 0.0012$) and \texttt{tessdata\_best} by 11.0 points ($p = 0.0001$). It
+takes low-resolution accuracy on Test~A from 60.0\% to 98.5\% and reduces decimal-point losses
+on Test~B from 109 to 11. The best configuration we tested is therefore the unmodified
+\texttt{tessdata\_best} model with rescaling, which also carries the lowest between-document
+variability in the panel.
 
 The reason is mechanical rather than statistical. A decimal point at 100~dpi occupies a handful
 of pixels and the recogniser's line model has little evidence to work with. Upscaling adds no
@@ -737,19 +794,32 @@ first number on the line falls through to the lower bound of the reference range
 as 0.8, glucose 77 read as 70.
 \item \textbf{Digit substitution.} 31 read as 32, 195 as 198, 121 as 127. Plausible, same flag,
 invisible to any rule.
-\item \textbf{Split decimal.} Introduced by a narrowly trained fine-tune, as described above.
+\item \textbf{Split decimal.} A monospace decimal point read as a word break, so
+\texttt{7.8} becomes \texttt{7 . 8} and the parser truncates to 7. Introduced by the
+fine-tuned models and absent from every stock configuration (Table~\ref{tab:fonts}).
 \item \textbf{Generative rewriting.} Produced only by the vision--language model.
 \end{enumerate}
 
 Mechanisms 1, 2 and 4 have structural signatures that a checker can exploit. Mechanisms 3 and 5
 do not, and require a second opinion.
 
-\section{What catches the errors that remain}
+\section{Experiment 4: what catches the errors that remain}
 
-No reader in Table~\ref{tab:engines} is safe everywhere. Experiment~4 therefore tests
+No reader in Table~\ref{tab:engines} avoids undetected errors across all conditions.
+Experiment~4 therefore tests
 verification rather than recognition. Nothing is corrected automatically; a failed check routes
 the value to human review against the source image, which is the only safe action when the
 system cannot tell which of two readings is right.
+
+Terms are used precisely below. A value is \emph{corrupted} if the reader emitted a number that
+differs from truth. A check \emph{catches} a value by routing it to human review; nothing is
+corrected automatically, and a caught value is not a corrected value. A \emph{false alarm} is a
+correct value routed to review. The \emph{review rate} is the share of all extracted values a
+human would inspect, and \emph{undetected wrong} values are corrupted values the system accepted
+without review. The denominators differ by test set: 619 of 832 values were extracted at all on
+Test~A, of which 43 were corrupted; 1{,}685 of 1{,}988 were extracted on Test~B, of which 193
+were corrupted. Values that were never extracted are absences the caller can observe and are
+excluded from these counts.
 
 Four checks are layered on the existing plausibility bound. The \emph{precision} check flags a
 value printed without a decimal for an analyte that laboratories always report with one. The
@@ -759,6 +829,19 @@ such as troponin in infarction are not flagged. The \emph{structure} check detec
 fall-through by testing whether the extracted number is immediately followed by a range
 separator and a second number. The \emph{agreement} check requires a second, independently built
 reader to return the same value.
+
+The claim that the two readers are independent is architectural rather than statistical, and it
+the distinction matters. Tesseract recognises a segmented text line with
+a recurrent LSTM over the whole line; PP-OCR detects text regions with a separate convolutional
+detector and recognises each crop independently, through a different training corpus and a
+different inference stack. They therefore fail on different inputs: Tesseract's characteristic
+error is losing a small separator within a line it has segmented correctly, while PP-OCR's is a
+detection boundary that clips or merges fields. Our data are consistent with this, since the two
+readers' error sets overlap only partially. What we have not established is statistical
+independence of their errors, which would require a failure model neither engine provides. Both
+could in principle fail identically on a sufficiently degraded page, and in that case agreement
+would confirm a wrong value rather than catch it. The check therefore reduces the chance of an
+undetected error; it does not eliminate it.
 
 \begin{table}[t]
 \centering
@@ -779,14 +862,18 @@ Checks & Silent caught & Wrong caught $\cdot$ B & 95\% CI & False alarms & Revie
 None                              & \phantom{0}0 / 28 & \phantom{00}0 \phantom{0}(0.0\%) & \phantom{0}0.0--1.9 & 0.0\% & \phantom{0}0.0\% \\
 Plausibility only (existing)      & \phantom{0}9 / 28 & \phantom{0}99 (51.3\%) & 44.0--58.5 & 0.8\% & \phantom{0}6.6\% \\
 \quad + precision                 & 23 / 28 & 158 (81.9\%) & 75.7--87.0 & 0.8\% & 10.1\% \\
-\quad + precision + structure     & 23 / 28 & 168 (87.0\%) & 81.5--91.4 & 0.9\% & 10.7\% \\
+\quad + magnitude                 & 23 / 28 & 158 (81.9\%) & 75.7--87.0 & 0.8\% & 10.1\% \\
+\quad + structure                 & 23 / 28 & 168 (87.0\%) & 81.5--91.4 & 0.9\% & 10.7\% \\
 \quad + agreement with PP-OCR     & \textbf{28 / 28} & \textbf{193 (100\%)} & \textbf{98.1--100} & 9.4\% & 19.8\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The structural checks are nearly free: they raise detection from 51.3\% to 87.0\% while
-increasing false alarms by 0.1 percentage points. Agreement with a structurally different reader
+The magnitude check caught nothing the precision check had not already caught, on either test
+set, and we report that null result rather than omitting the row: the decimal losses it was
+designed to detect were all flagged first by the simpler precision rule. The remaining
+structural checks are nearly free, raising detection from 51.3\% to 87.0\% while increasing
+false alarms by 0.1 percentage points. Agreement with a structurally different reader
 closes the remainder, at the cost of routing roughly one value in five to review. With agreement
 enabled, every value the system accepted in both test sets was correct. The result holds when
 the fine-tuned model is the primary reader, where agreement still catches 266 of 268 wrong
@@ -796,7 +883,7 @@ The practical reading is that the second reader is doing work no single reader c
 itself, because the errors that survive the structural checks are precisely the ones that look
 normal.
 
-The review burden is worth stating in operational terms. At the structural tier, 10.7\% of
+The review burden translates as follows. At the structural tier, 10.7\% of
 values are routed to review and 87.0\% of wrong values are caught: for a clinic ingesting 100
 reports a day with a 14-analyte panel, that is roughly 150 values to check against the source
 image. Adding the agreement check raises the catch rate to 100\% and the burden to 19.8\%, or
@@ -825,20 +912,19 @@ where it is least needed, for analytes like potassium whose physiological envelo
 and it provides nothing for analytes like troponin whose plausible range spans several orders of
 magnitude.
 
-Two mitigations follow from the mechanism rather than from the specific numbers. Carrying a
-magnitude check alongside the flag, for example a comparison against the range printed on the
-document itself rather than a hardcoded range, would detect errors the flag cannot. Treating
-unread and misread differently matters as well: an unread analyte is an absence a caller can
-notice, while a misread one is a confident wrong answer.
+One distinction in the results carries directly into how such a system should be read. An
+unread analyte is an absence the caller can notice; a misread one is a confident wrong answer.
+Pooling them, as a single extraction-failure rate would, conceals the difference between a
+failure that announces itself and one that does not.
 
 Experiments~3 and 4 bear on how such a pipeline should be built. The instinct to fix a reading
 problem by training a better reader is, on our data, actively misleading. Evaluated on the
-document it was tuned for, the fine-tuned recogniser reads perfectly in the failure regime; the
-same model is no better than stock on held-out reports and produces more silent corruptions
-than the model it replaced. A practitioner who held out no unseen typography would have
+document it was tuned for, the fine-tuned recogniser reads perfectly in the failure regime; set
+against its own base model under identical preprocessing, it reads held-out reports less
+accurately and produces three times as many corrupted values. That difference does not survive
+correction for multiple testing, so we treat its direction as supported and its significance as
+unestablished. A practitioner who held out no unseen typography would have
 concluded the problem was solved and deployed a model that fails differently rather than less.
-Held-out evaluation in a deliberately different font is what separates the two conclusions, and
-it costs a few hours.
 
 By contrast, the intervention that worked is not a model at all. Upscaling the page before
 recognition improves low-resolution accuracy more than any model change we tested, requires no
@@ -852,12 +938,49 @@ and the invented values moved toward the normal range. A system that silently no
 abnormal results is more dangerous than one that fails loudly, and conventional accuracy
 reporting would have recorded this model as the best performer.
 
-The general lesson is that safety in this pipeline comes from disagreement rather than from
-accuracy. Two readers built on different principles fail on different inputs, and requiring them
+The pattern across these experiments is that undetected error is reduced by disagreement rather
+than by accuracy. Two readers built on different principles fail on different inputs, and requiring them
 to agree converts an undetectable error into a detectable one. On our data that reduced
 undetected wrong values to zero, at a review burden of roughly one value in five. Whether that
 burden is acceptable is a deployment question that depends on volume and on what the values are
 used for.
+
+\section{What follows for a system that reads clinical documents}
+
+The findings suggest five things a team building such a pipeline could act on. We state them as
+implications of the mechanism rather than as validated interventions, since none has been tested
+in a clinical setting.
+
+\begin{enumerate}
+\item \textbf{Do not report character accuracy as a safety figure.} It did not bound value-level
+error anywhere in our data, and the gap was widest in the degradation regime real documents
+occupy. Report the share of target values extracted exactly, which is the quantity the clinical
+logic consumes.
+
+\item \textbf{Normalise resolution before recognition.} Upscaling to at least 300~dpi gave a
+larger improvement than any model change we tested, adds no parameters and cannot overfit. It is
+a few lines of code at the front of the pipeline.
+
+\item \textbf{Hold out typography before trusting a fine-tuned recogniser.} Evaluated only on
+familiar documents, our fine-tuned model looked like a solution. On fonts it had never seen,
+measured against its own base model under the same preprocessing, it read less accurately and
+produced more invisible errors. A held-out set in a deliberately
+different typeface separates those two conclusions and costs a few hours to build.
+
+\item \textbf{Treat a generative reader's output as a claim, not a transcription.} The
+vision--language model was the most accurate reader on legible pages and, on illegible ones,
+produced plausible values that were not printed, biased toward the normal range. Any pipeline
+using such a model needs its output checked against a deterministic reader on the same region,
+because the failure is invisible to checks that inspect the value alone.
+
+\item \textbf{Carry the distance, not just the side, of a threshold.} The flag is where the
+information is lost. A system that retains how far a value lies outside its reference range, or
+that compares against the range printed on the document rather than a hardcoded one, can detect
+errors that a flag cannot represent.
+\end{enumerate}
+
+Of these, the second and third cost almost nothing and we would expect them to generalise. The
+fifth is a design change with wider consequences and would need evaluating in context.
 
 \section{Limitations}
 
@@ -905,6 +1028,34 @@ conventionally printed with a decimal and what counts as a narrow range, are typ
 values assembled for this study rather than a clinical standard. A deployment would take them
 from the laboratory's own information system.
 
+Typeface and layout are aliased in Test~B. Each of the two fonts was paired with its own two
+column layouts, so the Times and Courier halves differ in both respects simultaneously. The
+accuracy difference between the halves in Table~\ref{tab:fonts} therefore cannot be attributed
+to typeface alone, and we do not claim that it can. The narrower claim we do make, that the
+fine-tuned models emit decimal points as separate tokens, rests on the character pattern in the
+recognition output rather than on the group comparison, and a column layout cannot produce that
+pattern. A design that crossed fonts with layouts would separate the two factors and we did not
+run one.
+
+No analysis plan was prespecified for the engine comparisons. The five paired tests we report
+were chosen after the result tables existed, during a verification audit of this manuscript, and
+should be read as post hoc. Taking all five as one family, a Bonferroni threshold of
+$\alpha = 0.010$ is met by the two rescaling comparisons ($p = 0.0012$ and $p = 0.0001$) and by
+the comparison between the two fine-tuned versions ($p = 0.0015$). It is \emph{not} met by
+either comparison of a fine-tuned model against its base ($p = 0.031$ and $p = 0.020$).
+
+We therefore do not describe fine-tuning as significantly worse than its base model. What the
+data support is that fine-tuning produced lower held-out accuracy, by 8.1 percentage points for
+version~2 and 18.0 for version~1, in a consistent direction across both versions and
+corroborated by the per-typeface breakdown in Table~\ref{tab:fonts}, with unadjusted paired
+tests that do not survive correction for multiplicity. A reader should treat the direction as
+supported and the inferential claim as not established at this sample size.
+
+The confidence intervals on verification recall are exact binomial intervals over pooled
+corruptions and do not account for clustering within documents; they are descriptive rather than
+inferential. The pooled risk ratio has the same limitation, which is why the document-level
+paired analysis is reported alongside it and is the basis for the claim.
+
 The review rate reported for the agreement check is measured on our degradation distribution. A
 document population with better average capture quality would produce fewer disagreements and a
 lower burden, and a worse one would produce more.
@@ -913,21 +1064,21 @@ lower burden, and a worse one would produce more.
 
 Character accuracy and value accuracy come apart under degradation, and the gap is widest
 exactly where the clinical stakes are highest. Nearly half of the value corruptions we observed
-preserved the abnormality flag, and corruption of an already-abnormal value was more than five
-times as likely to be silent as corruption of a normal one, because a threshold cannot represent
-how far past it a value has moved. A plausibility bound recovers some of this and fails
+preserved the abnormality flag, and corruption of an already-abnormal value was 2.80 times as
+likely to be silent as corruption of a normal one (95\% CI 1.75--4.47), because a threshold
+cannot represent how far past it a value has moved. A plausibility bound recovers some of this and fails
 systematically for the analytes with the widest physiological ranges. Substituting a language
 model for a deterministic parser changed nothing, because the information was lost before either
 could read it. Knowing where a number came from is not the same as knowing it was read
 correctly.
 
 Attempting to fix this by training a better recogniser produced a model that reads the document
-it was tuned for perfectly and unseen typography worse than the model it replaced, while
-increasing the number of corruptions the alerting layer cannot see. Upscaling the page before
+it was tuned for perfectly, and on held-out material behaved unpredictably, reading one half of
+it better than any other reader and the other half worse, while increasing the number of
+corruptions the alerting layer cannot see. Upscaling the page before
 recognition, which adds no parameters and cannot overfit, did more for low-resolution accuracy
 than any model we trained. A vision--language model read legible pages better than anything else
-and, on illegible pages, invented plausible values in the direction of normality. What made the
-pipeline safe was none of these: it was requiring two independently built readers to agree, which
+and, on illegible pages, invented plausible values in the direction of normality. What most reduced undetected errors was none of these: it was requiring two independently built readers to agree, which
 left no undetected wrong value in either test set, within the limits that a finite sample with
 zero observed failures can establish. In a pipeline that reduces measurements to
 flags, the useful question is not how accurately the page was read, but whether anything
@@ -946,6 +1097,12 @@ versions, the per-reading result tables from which every number in this paper is
 verification implementation, and the scripts that produce each figure and table. Reproduction
 instructions, including the exact commands for generating the held-out test set, training a
 model and evaluating any reader in Table~\ref{tab:engines}, are in the repository README.
+A single script, \texttt{numeric-ocr/reproduce\_statistics.py}, recomputes every statistic
+reported in this manuscript directly from the released per-reading tables: the five paired
+engine comparisons and their Bonferroni threshold, the accuracy and silent-corruption summaries,
+the per-typeface breakdown, the split-decimal signature counts, the pooled and clustered
+analyses of Experiment~2 with their intervals, and the verification ablation with exact binomial
+intervals.
 
 The fine-tuned Tesseract models are 15~MB each and are released with the code. Third-party
 components are obtained from their own distributions rather than redistributed: the stock
@@ -985,16 +1142,11 @@ unfunded academic project and is not a commercial product.
 
 \section*{Use of artificial intelligence}
 
-The author used a large language model assistant (Anthropic Claude) to help draft and edit the
-text of this manuscript, and as a coding assistant while implementing the experiment harness and
-the analysis scripts. All experimental design decisions, the choice of metrics, the statistical
-analysis and its interpretation are the author's own. Every number reported in this manuscript
-was produced by the released experiment code and checked against the per-reading result tables
-in the repository. A large language model also appears as an \emph{object} of study in
-Section~\ref{sec:llm-extractor} and in the vision--language comparison; that use is experimental
-and is described in the Methods. The author read and takes full responsibility for the entire
-content of this manuscript. No large language model is listed as an author and none holds any
-authorial role, consistent with medRxiv policy.
+The author used Anthropic Claude as a coding assistant, to help write and debug the experiment
+and analysis code, and to help draft and check the manuscript text. The research question,
+experimental design, execution, analysis and interpretation are the author's own. The author
+reviewed and edited all content, verified every reported value against the released result
+files, and takes full responsibility for this manuscript.
 
 \begin{thebibliography}{99}
 \small
@@ -1025,6 +1177,13 @@ regression or machine learning methods.
 Gao, Y., et al. (2023).
 Retrieval-augmented generation for large language models: a survey.
 \emph{arXiv:2312.10997}.
+
+\bibitem[Kilickaya et al.(2014)]{kilickaya2014ranges}
+Kilickaya, O., Schmickl, C., Ahmed, A., Pulido, J., Onigkeit, J., Kashani, K., Gajic, O.,
+Herasevich, V., and Pickering, B. (2014).
+Customized reference ranges for laboratory values decrease false positive alerts in intensive
+care unit patients.
+\emph{PLoS ONE}, 9(9), e107930. \url{https://doi.org/10.1371/journal.pone.0107930}
 
 \bibitem[Hemmer et al.(2024)]{hemmer2024confidence}
 Hemmer, A., Coustaty, M., Bartolo, N., and Ogier, J.-M. (2024).
