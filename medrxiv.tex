@@ -244,12 +244,10 @@ analyte by label and extracts the first numeric token on the line.
 
 The flagging logic is transcribed, rather than imported, from the prototype's
 \texttt{clinical\_parser} module so that the experiment runs without the application stack. The
-transcription preserves a property of the deployed system worth stating plainly: its reference
-ranges are fixed, are not age- or sex-aware, and are not the ranges printed on the document. The
-system flags haemoglobin outside 12.0--17.5~g/dL while the generated
-report prints 12.0--15.5~g/dL.
+transcription preserves the deployed system's flagging behaviour exactly rather than correcting
+it.
 
-Two properties of this flagging logic matter for interpreting every result below. First,
+Two properties of that logic matter for interpreting every result below. First,
 abnormality is decided against \emph{hardcoded} ranges held in the prototype, not against the
 range printed on the document, and the two can differ: the system flags haemoglobin outside
 12.0--17.5~g/dL while the generated report prints 12.0--15.5~g/dL. Second, those ranges are
@@ -830,7 +828,7 @@ fall-through by testing whether the extracted number is immediately followed by 
 separator and a second number. The \emph{agreement} check requires a second, independently built
 reader to return the same value.
 
-The claim that the two readers are independent is architectural rather than statistical, and it
+The claim that the two readers are independent is architectural rather than statistical, and
 the distinction matters. Tesseract recognises a segmented text line with
 a recurrent LSTM over the whole line; PP-OCR detects text regions with a separate convolutional
 detector and recognises each crop independently, through a different training corpus and a
